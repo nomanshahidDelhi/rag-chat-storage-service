@@ -1,0 +1,11 @@
+target/
+.env
+.idea/
+*.iml
+*.iws
+.vscode/
+.DS_Store
+*.log
+
+# Original case study brief (company IP, not for public redistribution)
+Backend Developer Case Study 25.docx
