@@ -219,16 +219,8 @@ filter are covered with Mockito-based unit tests (no Spring context, no database
   gives a standard `SecurityContext`, a clean `AuthenticationEntryPoint` for consistent
   401 bodies, and first-class CORS integration.
 - **Bucket4j, in-memory, per-IP** rate limiting — a distributed limiter (Redis-backed)
-  would be over-engineering for a single-instance service; noted below as a future step.
+  would be over-engineering for a single-instance service.
 - **Explicit `PagedResponse<T>` DTO** instead of returning Spring Data's `Page<T>`
   directly — keeps the JSON response shape a stable, documented contract.
 - **`context` stored as JSONB** (`JsonNode`) — arbitrary structured RAG retrieval data
   (chunks, sources, scores) without forcing a rigid shape.
-
-## Future improvements (explicitly out of scope here)
-
-- Real user authentication (JWT/OAuth2) instead of a single shared API key.
-- Redis-backed distributed rate limiting for multi-instance deployments.
-- Streaming responses / actual LLM or retrieval integration (this service only persists
-  chat history that a separate RAG pipeline would produce).
-- Bounded eviction (e.g. Caffeine) for the in-memory rate-limit bucket map.
