@@ -81,7 +81,7 @@ Swagger UI: `http://localhost:8080/swagger-ui.html`
 2. `cp .env.example .env` and adjust `POSTGRES_*` / `API_KEY` as needed. The app auto-loads
    `.env` via `spring-dotenv` when run with `mvn spring-boot:run`.
 3. `mvn spring-boot:run` (uses the `dev` profile by default, pointing at `localhost:5432`).
-
+4. Start pgAdmin if wants to see the database GUI: `docker compose up -d pgadmin`
 ## Environment variables
 
 | Variable | Description | Default |
